@@ -5,15 +5,9 @@ import MainLayout from "./layout/MainLayout";
 
 function App() {
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const data = await TaskService.getAll();
-        console.log("Respuesta del backend (getAll):", data);
-      } catch (error) {
-        console.error("Error obteniendo tareas:", error);
-      }
-    };
-    fetchTasks();
+    TaskService.getAllTask().then((data) => {
+      console.log("Respuesta del backend (getAllTask):", data);
+    });
   }, []);
   return (
     <MainLayout>
