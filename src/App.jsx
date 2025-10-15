@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import TaskService from "./services/TaskService";
-import React from "react";
 import MainLayout from "./layout/MainLayout";
+//import TaskList from "./views/TaskList";
 
 function App() {
   useEffect(() => {
-    TaskService.getAllTask().then((data) => {
-      console.log("Respuesta del backend (getAllTask):", data);
+    TaskService.getAll().then((data) => {
+      console.log("Respuesta del backend (getAll):", data);
     });
   }, []);
   return (

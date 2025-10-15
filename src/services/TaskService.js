@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:8000/api";
-const TOKEN = "7|yakMVA4sHL7YiqicAfkSXeYZbcfod3MpGDuNPDQf0ac706e3";
+const API_URL = "http://127.0.0.1:8000/api";
+const TOKEN = "3|dKdPZsPdUt6JrA1JFiwWf8lHIfzaZJLPvocWyATWf9bfa7e2";
 
-export const getAllTask = async () => {
+export const getAll = async () => {
   try {
     const response = await fetch(`${API_URL}/tasks`, {
       method: "GET",
@@ -14,11 +14,10 @@ export const getAllTask = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error en getAllTask():", error);
+    console.error("Error en getAll():", error);
   }
 };
 
-//exportar metodos
 export default {
-    getAllTask
+    getAll
 };
