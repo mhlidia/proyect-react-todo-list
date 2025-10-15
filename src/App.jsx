@@ -1,22 +1,26 @@
-import { useEffect } from "react";
-import TaskService from "./services/TaskService";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-//import TaskList from "./views/TaskList";
+import TaskList from "./views/TaskList";
 
-function App() {
-  useEffect(() => {
-    TaskService.getAll().then((data) => {
-      console.log("Respuesta del backend (getAll):", data);
-    });
-  }, []);
+function App() {  
   return (
     <MainLayout>
-      <div className="text-center mt-4">
-        <h1>Hola!! To-Do List</h1>
-        <p>Probando conexion backend...</p>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="text-center mt-4">
+              <h1>Hola!! To-Do List</h1>
+              <p>Bienvenido a tu app de tareas</p>
+            </div>
+          }
+        />
+        <Route path="/task" element={<TaskList />} />
+      </Routes>
     </MainLayout>
   );
+  
 }
 
 export default App;

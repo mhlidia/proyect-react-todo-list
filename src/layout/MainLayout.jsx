@@ -14,7 +14,7 @@ const MainLayout = ({ children }) => {
         <Sidebar />
 
         {/* Contenido principal */}
-        <main className="flex-grow-1 p-3 bg-light">
+        <main className="flex-grow-1 p-4 bg-light" style={{ width: '100%' }}>
           {children}
         </main>
       </div>
