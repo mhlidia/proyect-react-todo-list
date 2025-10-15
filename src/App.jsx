@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import TaskService from "./services/TaskService";
 import MainLayout from "./layout/MainLayout";
-//import TaskList from "./views/TaskList";
 
 function App() {
   useEffect(() => {
