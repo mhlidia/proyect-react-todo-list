@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import TaskService from "./services/TaskService";
-import React from "react";
 import MainLayout from "./layout/MainLayout";
+//import TaskList from "./views/TaskList";
 
 function App() {
   useEffect(() => {
-    TaskService.getAllTask().then((data) => {
-      console.log("Respuesta del backend (getAllTask):", data);
+    TaskService.getAll().then((data) => {
+      console.log("Respuesta del backend (getAll):", data);
     });
   }, []);
   return (
@@ -14,10 +14,10 @@ function App() {
       <div className="text-center mt-4">
         <h1>Hola!! To-Do List</h1>
         <p>Probando conexion backend...</p>
+        <p>Abre la consola para ver los datos</p>
       </div>
     </MainLayout>
   );
 }
 
 export default App;
-
